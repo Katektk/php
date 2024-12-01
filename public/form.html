@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форматирование текста</title>
+</head>
+<body>
+    <div class="container">
+        <form action="procces.php" method="post">
+            <h1>Форма для настройки текста</h1>
+            <p>Введите текст:</p> <textarea name="textarea" rows="10" cols="50"></textarea>
+            <p>Выберите настройки:</p>
+            <p><label>Количество символов в строке:&nbsp;<input type="number" name="maxNumber" min="10" max="100"></label></p>
+            <label>Что делать если слово превышает ограничение?&nbsp;<select name="choice">
+                <option disabled selected></option>
+                <option value="cutBefore">Обрезать до</option>
+                <option value="cutAfter">Обрезать после</option>
+            </select></label>
+            <p><input type="submit" name="button" value="Применить настройки"></p>
+        </form>
+
+    </div>
+    
+</body>
+</html>
