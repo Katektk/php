@@ -1,5 +1,6 @@
 <?php
 require_once "form.html";
+require_once "post.php";
 if (isset($_GET['error'])) {
     switch ($_GET['error']) {
     case '1':
@@ -10,7 +11,6 @@ if (isset($_GET['error'])) {
         break;
     case '3':
         echo "<p class='error'>Выберите, что делать, если слово превышает ограничение!</p>";
-        break;
-    default:
-        echo "<p class='error'>Неизвестная ошибка.</p>"; }
+        break; 
+    }
 }

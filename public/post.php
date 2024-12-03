@@ -2,24 +2,23 @@
 require_once "validation.php";
 require_once "functionText.php";
 
-if ($_SERVER["REQUEST_METHOD"] == 'POST') {
-    if (isset($_POST['textarea'])) {
+if (!empty($_POST)) {
+    if ($_POST['textarea']) {
         $textarea = trim($_POST['textarea']);
     } else {
         $_POST['teaxtarea'] = '';
     }
 
-    if (isset($_POST['maxNumber'])) {
+    if ($_POST['maxNumber']) {
         $maxNumber = intval($_POST['maxNumber']);
     } else {
         $_POST['maxNumber'] = 0;
     }
 
-    if (isset($_POST['choice'])){
+    if ($_POST['choice']){
         $choice = $_POST['choice'];
     } else {
         $_POST['choice'] = '';
-
     }
    
     if (!checkText($textarea)) {
@@ -38,7 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     }
 
     $lines = formatText($textarea, $maxNumber, $choice);
-    
     $fileName = "text" . ".txt";
     $file = fopen($fileName, 'w');
     if (!$file) {

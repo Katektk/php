@@ -3,7 +3,6 @@ function formatText(string $textarea, int $maxNumber, string $choice) :array {
     $words = preg_split('/\s+/', $textarea); 
     $lines = []; 
     $currentLineArray = []; 
- 
     foreach ($words as $word) { 
         $wordLength = mb_strlen($word, 'UTF-8'); 
 
@@ -24,7 +23,6 @@ function formatText(string $textarea, int $maxNumber, string $choice) :array {
             $currentLineArray[] = $word; 
         } 
     } 
-
     if (!empty($currentLineArray)) { 
         $lines[] = implode(' ', $currentLineArray); 
     } 
