@@ -1,21 +1,19 @@
 <?php
-
 function checkText($textarea):bool {
-    return mb_strlen($textarea, 'UTF-8') >= 10;
+    if (mb_strlen($textarea, 'UTF-8') >= 10){
+        return true;
+    }
+    return false;
 }
-
-
 function checkMaxLength($maxNumber):bool {
-     return is_int($maxNumber) && $maxNumber >= 10 && $maxNumber <= 100;
+    if (is_int($maxNumber) && $maxNumber >= 10 && $maxNumber <= 100){
+        return true;
+    }
+     return false;
 }
-
-
 function checkCut($choice):bool {
-    return in_array($choice, ['cutBefore', 'cutAfter']);
-    
+    if (in_array($choice, ['cutBefore', 'cutAfter'])){
+        return true;
+    }
+    return false;
 }
-
-
-
-
-
